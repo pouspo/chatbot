@@ -2,6 +2,15 @@
 session_start();
 date_default_timezone_set('Asia/Dhaka');
 require_once 'dbconfig/config.php';
+
+ //session_start();
+ if(isset($_POST['logout']))
+ {
+	 //session_start();
+	 session_destroy();
+	 header("Location: index.php");
+	 exit();
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,16 +46,6 @@ body
 			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
 			
 		</form>
-		<?php 
-		    //session_start();
-			if(isset($_POST['logout']))
-			{
-				//session_start();
-				session_destroy();
-				header("Location: index.php");
-				exit();
-			}
-		?>
                <!--start code-->
                <div class="card">
                   <div class="card-body messages-box">
