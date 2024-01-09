@@ -15,7 +15,9 @@ if($result->rowCount() > 0){
 $result->closeCursor();
 
 $added_on=date('Y-m-d h:i:s');
-$db->prepare("INSERT INTO message(message,added_on,type) VALUES('$stmt','$added_on','user')");
+$insertSql = "INSERT INTO message(message,added_on,type) VALUES($stmt,'$added_on','user')";
+$insertStatement = $db->prepare($insertSql);
+$insertStatement->execute();
 
 /*
 ********************
@@ -26,7 +28,9 @@ NO Need to do this
 */
 
 $added_on=date('Y-m-d h:i:s');
-$db->prepare("INSERT INTO message(message,added_on,type) VALUES('$content','$added_on','bot')");
+$insertStatement = $db->prepare("INSERT INTO message(message,added_on,type) VALUES('$content','$added_on','bot')");
+$insertStatement->execute();
+
 
 /*
 ********************

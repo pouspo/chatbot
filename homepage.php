@@ -1,4 +1,5 @@
 <?php
+session_start();
 date_default_timezone_set('Asia/Dhaka');
 require_once 'dbconfig/config.php';
 ?>
@@ -11,7 +12,7 @@ require_once 'dbconfig/config.php';
 	<br>
       <meta charset="utf-8">
       <meta name="robots" content="noindex, nofollow">
-      <title>Aresa Chatbot</title>
+      <title>JNU Chatbot</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	  <link href="style.css" rel="stylesheet">
@@ -36,12 +37,14 @@ body
 			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
 			
 		</form>
-		
-		<?php
+		<?php 
+		    //session_start();
 			if(isset($_POST['logout']))
 			{
+				//session_start();
 				session_destroy();
-				header('location:index.php');
+				header("Location: index.php");
+				exit();
 			}
 		?>
                <!--start code-->

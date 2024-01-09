@@ -15,7 +15,8 @@ INSERT INTO `chatbot_hints` (`id`, `question`, `reply`) VALUES
 (3, 'what is your name||whats your name', 'My name is Vishal Bot'),
 (4, 'what should I call you', 'You can call me Vishal Bot'),
 (5, 'Where are your from', 'I m from India'),
-(6, 'Bye||See you later||Have a Good Day', 'Sad to see you are going. Have a nice day');
+(6, 'Bye||See you later||Have a Good Day', 'Sad to see you are going. Have a nice day'),
+(7, 'HI', 'Hello, how are you.');
 
 -- --------------------------------------------------------
 
