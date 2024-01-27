@@ -1,12 +1,9 @@
 <?php
-	require_once 'dbconfig/config.php';
-		$rn=$_GET['rn'];
-		$ques=$_GET['ques'];
-		$rep=$_GET['rep'];
-?>
+require_once 'dbconfig/config.php';
+$rn=$_GET['rn'];
+$ques=$_GET['ques'];
+$rep=$_GET['rep'];
 
-
-<?php
 require_once 'dbconfig/config.php';
 
 if (isset($_POST['submit'])) {
@@ -14,12 +11,12 @@ if (isset($_POST['submit'])) {
     $question = $_POST['question'];
     $reply = $_POST['reply'];
 
-    $sql = "UPDATE CHATBOT_HINTS SET question=?, reply=? WHERE id=?";
+    $sql = "UPDATE chatbot_hints SET question=?, reply=? WHERE id=?";
     $stmt = $db->prepare($sql);
 
     if ($stmt->execute([$question, $reply, $id])) {
-        echo "<script>alert('Record Updated')</script>";
-        header("Refresh:0; url=http://localhost:7882/qna.php");
+        echo "<script>alert('Record Updated');  window.location.href = 'qna.php';</script>";
+        // header("Refresh:0; url=http://localhost:7882/qna.php");
         exit();
     } else {
         echo "Failed To Update Record";
@@ -53,7 +50,7 @@ if (isset($_POST['submit'])) {
 		font-size: 16px;
 	}
 	body{
-		background:linear-gradient(black,black);
+		background:rgba(200, 180, 196, 0.72);
 
 		background-repeat: no-repeat;
   background-attachment: fixed;
@@ -67,7 +64,7 @@ if (isset($_POST['submit'])) {
 </head>
 <br><br><br><br><br><br>
 
-<form action="" method="GET">
+<form action="" method="POST">
 	<table border="0" bgcolor="black" align="center" cellspacing="50">
 			<div id="main-wrapper">
 		<center>

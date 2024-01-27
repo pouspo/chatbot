@@ -27,8 +27,7 @@ require_once 'dbconfig/config.php';
 		font-size: 16px;
 	}
 	body{
-		background:linear-gradient(black,black);
-
+		background:rgba(200, 180, 196, 0.72);
 		background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -71,7 +70,7 @@ require_once 'dbconfig/config.php';
 		
 		</tr>
 	<tr>
-	<td  colspan="3" align="center"><input type="submit" id="button" name="submit" value="Report as Invalid"/></td>
+	<td  colspan="3" align="center"><input type="submit" id="button" name="submit" value="Insert"/></td>
 	</tr>
 
 
@@ -106,4 +105,6 @@ if(isset($_POST['submit']))
 ?>
 
 <!-- <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost:7882/qna.php"> -->
+
+
 	

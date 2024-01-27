@@ -77,7 +77,7 @@
 				<td>".$row["question"]." </td>
 				<td> ".$row["reply"]." </td>
 				<td><a href='update.php?rn=$row[id]&ques=$row[question]&rep=$row[reply]'>Edit/Update</td>
-				<td><a href='delete.php?rn=$row[id] onclick='return checkdelete()'>Delete</td></tr> ";
+				<td><a href='delete.php?rn=$row[id]' onclick='return checkdelete()'>Delete</td></tr> ";
 			}
 			echo "</table>";
 		}
@@ -91,7 +91,7 @@
 <script>
 		function checkdelete()
 		 {
-			return Confirm('Are you Sure you want to delete this record ?');
+			return confirm('Are you Sure you want to delete this record ?');
 		}
 
 

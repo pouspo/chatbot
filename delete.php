@@ -4,19 +4,19 @@ require_once 'dbconfig/config.php';
 try {
     $id = $_GET['rn'];
 
-    $sql = "DELETE FROM CHATBOT_HINTS WHERE ID = :id";
+    $sql = "DELETE FROM chatbot_hints WHERE ID = :id";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Record Deleted from database')</script>";
+        echo "<script>alert('Record Deleted from database'); window.location.href = 'qna.php';</script>";
     } else {
-        echo "<font color='red'>Failed to delete from db!!</font>";
+        echo "<script>alert('Failed to delete from db!!'); window.location.href = 'qna.php';</script>";
     }
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    $errMsg = $e->getMessage();
+    echo "<script>alert('Failed to delete from db! SQL ERROR'); window.location.href = 'qna.php';</script>";
 }
 
-header("Refresh:0; url=/qna.php");
 exit();
 ?>

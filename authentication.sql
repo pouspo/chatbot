@@ -34,6 +34,9 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
+
 --
 -- Dumping data for table `users`
 --
@@ -46,6 +49,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (5, '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
 (6, 'abcd', 'abcd@gmail.com', '353b15d58e64430f96283d4c95cc5688'),
 (7, '_aarav_raj_singh_', 'hk@gmail.com', '0cc175b9c0f1b6a831c399e269772661');
+
+
 
 --
 -- Indexes for dumped tables
